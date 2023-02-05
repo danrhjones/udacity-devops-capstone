@@ -44,9 +44,9 @@ jobs:
           name: Build application Docker image
           command: |
             cd frontend
-            docker build -t sabribouchlema/capstone-frontend:${CIRCLE_SHA1} .
+            docker build -t danrhjones/capstone-frontend:${CIRCLE_SHA1} .
             docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD
-            docker push sabribouchlema/capstone-frontend:${CIRCLE_SHA1}
+            docker push danrhjones/capstone-frontend:${CIRCLE_SHA1}
 
 
   deploy:

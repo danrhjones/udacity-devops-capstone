@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: capstone-frontend
-        image: sabribouchlema/capstone-frontend:${CIRCLE_SHA1}
+        image: danrhjones/capstone-frontend:${CIRCLE_SHA1}
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
