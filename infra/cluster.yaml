@@ -2,8 +2,8 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: capstone-cluster
-  region: us-west-2
+  name: wunder-weather-cluster
+  region: us-east-2
 
 managedNodeGroups:
   - name: nodegroup
@@ -13,4 +13,4 @@ managedNodeGroups:
     desiredCapacity: 3
     volumeSize: 20
     ssh:
-      publicKeyName: finalproject
+      publicKeyName: udacity
