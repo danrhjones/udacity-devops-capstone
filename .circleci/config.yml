@@ -75,18 +75,11 @@ jobs:
           name: Connect to cluster
           command: |
             aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name $CLUSTER_NAME
-      - run:
-          name: Prepare K8S template
-          command: |
-            rm -rf .k8s/.generated && mkdir -p frontend/.k8s/.generated
-            for f in frontend/.k8s/template/deployment.yaml
-              do
-              envsubst < $f > "frontend/.k8s/.generated/$(basename $f)"
-            done
+  
       - run:
           name: Deploy
           command: |
-            kubectl apply -f frontend/.k8s/.generated/
+            kubectl apply -f infra/deployment.yml
             kubectl get pod
 
 workflows:
